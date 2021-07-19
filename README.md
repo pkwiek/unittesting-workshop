@@ -72,6 +72,10 @@ void test_my_first_test(void)
 ```
 The test should fail. Now make it pass. This is how you can use unit tests to find
 code not working as expected. You can experiment with this a little more.
+Ceedling has a command that generates a fully tested example if you want to see more advanced case
+```
+ceedling example temp_sensor
+```
 
 ## ex_1p - setup your first test
 
