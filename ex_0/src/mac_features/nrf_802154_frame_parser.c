@@ -47,7 +47,7 @@
 #include <stdlib.h>
 
 #include "nrf_802154_const.h"
-#include "nrf_802154_utils.h"
+//#include "nrf_802154_utils.h"
 #include "nrf_802154_utils_byteorder.h"
 
 /***************************************************************************************************

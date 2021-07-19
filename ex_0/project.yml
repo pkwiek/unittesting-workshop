@@ -16,8 +16,7 @@
   :ceedling_version: 0.30.0
   :default_tasks:
     - test:all
-  :options_paths:
-    - test/unit_tests/variations/
+#  :options_paths:
 
 #:test_build:
 #  :use_assembly: TRUE
@@ -31,13 +30,11 @@
 
 :paths:
   :test:
-    - +:test/unit_tests/**
+    - +:test/**
     - -:test/support
   :source:
     - src/**
-  :include:
-    - include/**
-    - test/mocks/**
+  :include: []
   :support:
     - test/support
   :libraries: []
