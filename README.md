@@ -14,14 +14,16 @@ ceedling version
 ```
 
 ### Python
-To install pytest call
+To create and use virtual environment
 ```
-pip install pytest
+python3 -m venv ut_env
+source ut_env/bin/activate
+python -m pip install -r requirements.txt
 ```
 
 Once the installation is complete you can confirm it with by
 ```
-py.test -h
+pytest --version
 ```
 
 ## ex_0 - experiment with the concept of unit testing
@@ -54,9 +56,10 @@ and try running the test by
 ```
 ceedling test:all
 ```
-The test should pass. Then add a function returning something (it can be an integer or a boolean, or whatever)
-to `first_test.c` and its signature to `first_test.h`. Call the function in the test and compare its return value
-to a value that is not returned, e.g. function returns `1` and the return value is compared to `2`, with
+The test should pass. Then add a function returning something (it can be an integer or a boolean,
+or whatever) to `first_test.c` and its signature to `first_test.h`. Call the function in the test
+and compare its return value to a value that is not returned, e.g. function returns `1` and the
+return value is compared to `2`, with
 ```
 /* in first_test.c */
 uint32_t my_function(void)
@@ -92,9 +95,9 @@ Try running it by
 ```
 pytest
 ```
-The test should pass. Then add a function returning something (it can be an integer or a boolean, or whatever)
-to `first_test.py`. Call the function in the test and compare its return value to a value that is not returned,
-e.g. function returns `1` and the return value is compared to `2`, with
+The test should pass. Then add a function returning something (it can be an integer or a boolean,
+or whatever) to `first_test.py`. Call the function in the test and compare its return value to a
+value that is not returned, e.g. function returns `1` and the return value is compared to `2`, with
 ```
 /* in first_test.py */
 def my_function():
@@ -106,3 +109,11 @@ def test_method()
 ```
 The test should fail. Now make it pass. This is how you can use unit tests to find
 code not working as expected. You can experiment with this a little more.
+
+## ex_2
+
+Your goal is to write a simple queue module. A queue should allow for pushing and popping in
+a transactional manner. Test your code using unit tests. Think of what can be checked, e.g. whether
+the queue is created empty, what should happen if a write to a full queue is attempted.
+In the test file there is an example of setup function for C and its counterpart for Python,
+a fixture. Experiment with asserting on invalid input.
