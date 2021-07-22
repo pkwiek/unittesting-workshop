@@ -1,4 +1,4 @@
-# unittesting_workshop
+# unittesting-workshop
 
 ## setup
 
@@ -8,7 +8,7 @@ To install ceedling call
 gem install ceedling
 ```
 
-Once the installation is complete you can confirm it with by
+Once the installation is complete you can confirm it with
 ```
 ceedling version
 ```
@@ -21,7 +21,7 @@ source ut_env/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Once the installation is complete you can confirm it with by
+Once the installation is complete you can confirm it with
 ```
 pytest --version
 ```
@@ -147,3 +147,4 @@ api.py                      <- module with an external, time consuming API
 Run pytest. You should observe errors and how long it take to perform only two tests.
 Uncomment lines of code, they are described with an appropriate comment and rerun the tests. 
 If you want to learn more about mocking with pytest, read about `pytest-mock`.
+Mocking a dependency is not always as easy as in this example.
