@@ -117,3 +117,33 @@ a transactional manner. Test your code using unit tests. Think of what can be ch
 the queue is created empty, what should happen if a write to a full queue is attempted.
 In the test file there is an example of setup function for C and its counterpart for Python,
 a fixture. Experiment with asserting on invalid input.
+
+## ex_3c
+
+Your goal is to use a substitute a dependency that is not so easily tested, e.g. use of a peripheral.
+The module you are testing needs to control a pin. It is a very simple task, however there are no
+pins on you host machine. From `ex_3/c` directory run the tests with
+```
+ceedling options:nrf52840 test:all
+```
+You can see there is an additional `options:nrf52840` which tells ceedling which file is describing
+a variant of the module that is tested. Let's assume there is some other pin that needs to be driven
+in case of other board. Your Ceedling project is already setup for this task, as it contains required
+defines and a header file to mock. Mock a call with
+```
+<name_of_mocked_function>_ExpectAndReturn(<what_is_expected>, <returned_value>);
+```
+Mocking a dependency is not always as easy as in this example.
+
+## ex_3p
+
+Your goal is to use a substitute a dependency that is not so easily tested, e.g. call to an external server
+or an interaction with a DUT. You are provided with code that presents how to use mocks in pytest. Modules
+in the example are
+```
+module_with_dependency.py   <- module under test
+api.py                      <- module with an external, time consuming API
+```
+Run pytest. You should observe errors and how long it take to perform only two tests.
+Uncomment lines of code, they are described with an appropriate comment and rerun the tests. 
+If you want to learn more about mocking with pytest, read about `pytest-mock`.
