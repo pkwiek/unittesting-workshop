@@ -105,7 +105,7 @@ def my_function():
 
 /* in test_first_test.py */
 def test_method()
-    assert(2, first_test.my_function())
+    assert(2 == first_test.my_function())
 ```
 The test should fail. Now make it pass. This is how you can use unit tests to find
 code not working as expected. You can experiment with this a little more.
