@@ -30,6 +30,7 @@ bool foo(void)
 
         internal_state++;
     }
+    else
     {
         result = false;
     }
@@ -38,7 +39,7 @@ bool foo(void)
 }
 
 #if defined(TEST)
-void module_with_dependency_reset(void)
+static void module_with_dependency_reset(void)
 {
     internal_state = 0UL;
 }
